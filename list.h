@@ -20,6 +20,7 @@ public:
     list link(std::vector<int> &vect, int s);
     void RemoveNode(int x);
     void Print ();
+    
     int SumOfNodes();
 };
 

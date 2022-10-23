@@ -33,7 +33,7 @@ list list::link(vector<int> &vect, int s)
     int i=0;
     while(i!=vect.size())
     {
-        while(vect[i]==vect[i+1])
+        while(i+1<vect.size() && vect[i]==vect[i+1])
         {
             c++;
             i++;
@@ -42,7 +42,7 @@ list list::link(vector<int> &vect, int s)
         
         i++;
     }
-    
+    cout<<"link is: "<<endl;
         return l2;
 }
 
@@ -51,7 +51,7 @@ void list::RemoveNode(int x)
     node *q;
     q=header;
     node *prev = nullptr;
-    while((q->num!=x)&&(q!=NULL))
+    while(q->next!=NULL && q->num!=x)
     {
         prev = q;
         q=q->next;
@@ -80,6 +80,7 @@ void list::Print()
 int list:: SumOfNodes()
 {
     int sum=0;
+    mirror=header;
     if(header->next==NULL)
     {
         return header->num;
@@ -137,5 +138,7 @@ int main()
 insertAfter(firstnum,secondnum,V);
     l1.link(V, size);
     l1.Print();
-   l1.SumOfNodes();
+    l1.SumOfNodes();
+   
+
 }
